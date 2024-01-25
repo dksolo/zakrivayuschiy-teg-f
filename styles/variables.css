@@ -1,1 +1,17 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+    --Inter-Variable: 'Inter-Variable', sans-serif;
+    --PressStart2p: 'PressStart2p';
+    --font-weight-normal: 400;
+    --font-weight-heavy: 700;
+    --bg-color: #FFFFFF;
+    --main-color: #000000;
+    --btn-color: #FFFFFF;
+    /*--background-image: url(../images/background-light.jpg); This is an old solution*/
+    --bg-linear-gradient-color-primary: #d3d3d3;
+    --bg-linear-gradient-color-secondary: #e7e7e7;
+    --bg-linear-gradient-color-tertiary: #1a1a1a;
+    --like-icon-fill-color: #FF0000;
+    --like-icon-contour-color: #000000;
+}

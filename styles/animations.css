@@ -12,3 +12,38 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+@keyframes sliding-selector {
+    0% {
+        left: -24px;
+    }
+    100% {
+        left: -20px;
+    }
+
+}
+
+@keyframes like-sparks {
+    0% {
+        fill: transparent;
+    }
+    50% {
+        fill: var(--like-icon-fill-color, #FF0000);
+    }
+    100% {
+        fill: transparent;
+    }
+
+}
+
+@keyframes like-enlarge {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5) translateX(-10%) translateY(-10%);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
