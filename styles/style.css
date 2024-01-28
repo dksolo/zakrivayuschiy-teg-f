@@ -37,13 +37,13 @@
   margin: 100px auto 55px; /* In figma left and right are 372px under the size of 1440 */ 
   background-color: var(--bg-color, #fff);
   border: 1px solid var(--main-color, #000);
-  padding: 132px 25px 25px;
+  padding: 137px 25px 25px; 
 }
 
 .header__main-title-container {
   /*margin: clamp(120px, 15.12vh, 136px) clamp(14px ,8.38vw, 120px) 0px;*/
   margin: 0 auto 0;
-  gap: 11px;
+  gap: 20px;
   display: grid;
   align-content: center;
   justify-content: center;
@@ -68,11 +68,11 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  text-transform: uppercase;
+  text-transform: uppercase;  
 }
 
 .theme-menu {
-  padding: 18px 10px 5px 0;
+  padding: 25px 10px 5px 0;
 }
 
 .theme-menu__list {
@@ -315,17 +315,14 @@
   display:grid;
   justify-content: flex-end;
   grid-auto-flow: column;
-  z-index: 0;
+  gap: 4px;
 }
 
 .card__icon-button {   
-  width: 27px;
-  height: 24px;
   border: none; 
   outline: none;
   background: transparent;
   padding: 0;
-  margin: 0px 16px 6px 0;
   z-index: 2;
   align-self: center;
 }
@@ -333,8 +330,8 @@
 /* Like Icon and its states */
 
 .like-icon {
-  max-width: 54px;
-  max-height: 44px;
+  max-width: 40px;
+  max-height: 30px;
 }
 
 /*Basic State */
@@ -362,6 +359,13 @@
   transition: fill 0.3s ease;
 }
 
+/*FOCUS-VISIBLE state*/
+
+.card__icon-button:focus-visible {
+  outline: none;
+  border: 2px solid var(--main-color);
+  transition: border 0.3s ease; 
+}
 
 /*Hover state*/
 
@@ -492,7 +496,8 @@
 
 .footer {
   width: 24vw;
-  margin: 40px auto 0;
+  margin: 40px auto 103px;
+  max-width: 342px;
 }
 
 .footer__button {
@@ -541,7 +546,7 @@
 }
 
 .footer__floppy {
-  width: 30px;
+  width: 23px;
   position: relative;
   z-index: 1;
   mix-blend-mode: difference;
@@ -571,7 +576,7 @@
 
 /*DIALOG -- DIALOG -- DIALOG -- DIALOG -- DIALOG -- DIALOG -- DIALOG -- DIALOG -- DIALOG -- DIALOG -- DIALOG -- DIALOG -- DIALOG -- */
 
-.dialog-save-to {
+.dialog-save-to[open] {
   width: 357px;
   background-color: var(--bg-color, #000000); 
 
@@ -585,6 +590,7 @@
 .dialog-save-to:not([open]) {
   opacity: 0;
   pointer-events: none;
+  display: none;
 }
 
 .dialog-save-to::backdrop {
@@ -600,7 +606,6 @@
 
 .dialog__floppy {
   width: 39px;
-  height: 39px;
   position: relative; 
   z-index: 1;
   mix-blend-mode: difference;
@@ -683,64 +688,71 @@
 
 /* MEDIA -- MEDIA -- MEDIA -- MEDIA -- MEDIA -- MEDIA -- MEDIA -- MEDIA -- MEDIA -- MEDIA -- MEDIA -- MEDIA -- MEDIA -- MEDIA */
 
+
+
 @media (width <= 1000px) {
   .header {
     padding: 132px 0 25px;
     min-width: 390px;
   }
 
-
   .footer {
     width: 375px;
-    margin: 40px auto 0;
+    margin: 40px auto 103px;
   }
 }
 
-@media (width <= 375px) {
+@media (width <= 376px) {  
+  .header {
+    width: 100vw; 
+    padding: 121px 0 25px;
+    min-width: 100vw;      
+  }
 
-    .header {
-      width: 100vw;
-      margin: 102px 0 99px; 
-      padding: 115px 0 31px;
-      min-width: 100vw;
-    }
+  .card {
+    margin: 49px 0;
+    width: 100vw;
+  }
 
-    .card {
-      margin: 49px 0;
-      width: 100vw;
-    }
+  .card:first-of-type {
+    margin-top: 100px;
+  }
 
-    .card:first-of-type {
-      margin-top: 100px;
-    }
+  .card__title {
+    padding: 5px 10px;
+  }
 
-    .card__title {
-      padding: 5px 10px;
-    }
+  .card__image-container {
+    height: 100vw;
+  }
 
-    .card__image-container {
-      height: 100vw;
-    }
+  .card__image-watermark {
+    top: 20px;
+    right: 10px;
+  }
 
-    .card__paragraph {
-      line-height: 21px;
-      letter-spacing: 0.2px;
-    }
+  .card__paragraph {
+    line-height: 21px;
+    letter-spacing: 0.2px;
+  }
 
-    .footer {
-      width: 100%;
-      margin: 27px 0 0;
-      padding: 0 32px;
-    }
+  .footer {
+    width: 310px;
+    margin: 27px auto 103px;
+    padding: 0;  
+  }
 
-    .footer__button {
-      padding: 15px 0px;
-      flex-direction: column;
-      height: 80px;
-    }
+  .footer__button {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 8px;
+  }
 
-    .footer__floppy {
-      width: 40px;
-      height: 40px;
-    }
+  .footer__button-text {
+    padding: 0;
+  }
+
+  .footer__floppy {
+    width: 30px;
+  }
 }
